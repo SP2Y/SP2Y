@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Studio Psaumes De YHWH</title>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/flashblock.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/ui360player.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/360player-visualization.css" />
+    <script type="text/javascript" src="assets/js/berniecode-animator.js"></script>
+    <script type="text/javascript" src="assets/js/soundmanager2.js" charset="utf-8"></script>
+    <script type="text/javascript" src="assets/js/360player.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="assets/js/semantic.min.js"></script>
+    <script type="text/javascript">
+        ScrollReveal({
+            duration: 1000,
+            distance: '50px'
+        })
+
+
+        soundManager.setup({
+            // path to directory containing SM2 SWF
+            url: 'assets/sm/swf/'
+        });
+
+        threeSixtyPlayer.config.scaleFont = (navigator.userAgent.match(/msie/i) ? false : true);
+        threeSixtyPlayer.config.showHMSTime = true;
+
+        // enable some spectrum stuffs
+
+        threeSixtyPlayer.config.useWaveformData = true;
+        threeSixtyPlayer.config.useEQData = true;
+
+        // enable this in SM2 as well, as needed
+
+        if (threeSixtyPlayer.config.useWaveformData) {
+            soundManager.flash9Options.useWaveformData = true;
+        }
+        if (threeSixtyPlayer.config.useEQData) {
+            soundManager.flash9Options.useEQData = true;
+        }
+        if (threeSixtyPlayer.config.usePeakData) {
+            soundManager.flash9Options.usePeakData = true;
+        }
+
+        if (threeSixtyPlayer.config.useWaveformData || threeSixtyPlayer.flash9Options.useEQData || threeSixtyPlayer.flash9Options.usePeakData) {
+            // even if HTML5 supports MP3, prefer flash so the visualization features can be used.
+            soundManager.preferFlash = true;
+        }
+
+        // favicon is expensive CPU-wise, but can be enabled.
+        threeSixtyPlayer.config.useFavIcon = false;
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+
+    <!-- begining of header master-->
+    <div class="sp2y">
+    <header>
+        <div class="section-container">
+            <div class="ui container">
+                    <div class="" id="fixd-top-bar">
+                            <div class="ui container">
+                                <div class="row" id="top-side-menu">
+                                    <ul>
+                                        <li id="Studio">Studio Psaumes de YHWH</li>
+                                        <div class="ui dropdown" id="language">
+                                            <input type="hidden" name="language">
+                                            <i class="language icon"></i>
+                                            <div class="default text">Langues</div>
+                                            <div class="menu">
+                                                <div class="item" data-value="Français"><i class="fr flag"></i> Français</div>
+                                                <div class="item" data-value="English"><i class="gb flag"></i>English</div>
+                                                <div class="item" data-value="Espanol"><i class="es flag"></i>Español</div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                    <!--<ul>
+                                  <li id = "glob_icon"><a id = "link_glob" href="#"><i class="globe icon"></i></a></li>
+                               </ul>-->
+                                    <ul id="SML">
+                                        <li><a href="#" data-tooltip="Faire une recherche" data-inverted="" data-position="bottom right" data-variation="mini" id="search-icon" alt="recherche"><i class="search icon" data-variation = "mini"></i></a></li>
+                                        <li><a href="deaf/deaf.html" data-tooltip="Section Sourd-Muet" data-inverted="" data-position="bottom center" id="link_deaf"><i class="deaf icon" data-variation = "inverted"></i></a></li>
+                                            </a>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                <div class="ui secondary menu" id="top-menu">
+                    <div class="row">
+                        <ul class="centered-menu">
+                            <a href="#" class="ui small image">
+                            <img src="assets/img/sp2y.png" alt="SP2Y"/>
+                        </a>
+                            <li class="item" id="center-menu"><a href="#" id="link">Accueil</a></li>
+                            <li class="item" id="center-menu"><a href="#" id="link">Albums</a></li>
+                            <li class="item" id="center-menu"><a href="#" id="link">Temoignages </a> </li>
+                            <li class="item" id="center-menu"><a href="#" id="link">Contact</a> </li>
+                        </ul>
+                        <ul>
+                            <li class="item" id="right-center-menu"><a href="#" id="link1">Vision</a></li>
+                        </ul>
+                        <a href="#" class="ui button" id="btn-button"><i class="heart icon"></i> Soutenir l'oeuvre </a>
+                    </div>
+                </div>
+                <div class="ui feed" id="inforamtion">
+                    <div class="event">
+                        <a class="item">
+                            <div class="ui green horizontal label" id="new-label">Nouveau</div>
+                        </a>
+                        <div class="content">
+                            <div class="summary" id="text-content">
+                                Nouveau cantique publié : <span id="new-song">Le Dieu Eternel</span>.
+                                <div class="date" id="date">Aujourd'hui</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="doubling two column row" id="main-description">
+                    <div class="column" id="element">
+                        <h1 style="font-family : Josefin Sans; font-size : 40px">Studio Psaumes de YHWH</h1>
+                        <h2 style="font-family : Josefin Sans">A YHWH soit toute la gloire !</h2>
+                        <p>Studio Psaumes de YHWH est une oeuvre chrétienne qui vise à promouvoir la louange et l'adoration en l'honneur de Notre Seigneur et Sauveur Jésus-Christ de Nazareth, par le billet des cantiques spirituels reçu du Père des lumières, à qui TOUTE la gloire est rendue. Amen.
+                        </p>
+
+                        <div class="ui animated fade button" tabindex="0" id="starter-button">
+                            <div class="visible content" id="intro-text-button">A propos</div>
+                            <a href="#" class="hidden content">La musique chrétienne</a>
+                        </div>
+                        <div class="ui animated button" tabindex="0" id="starter-button1">
+                            <div class="visible content" id="intro-text-button">Aller à</div>
+                            <a href="library/library.html" class="hidden content">Musicothèque</a>
+                        </div>
+                    </div>
+                    <div class="column" id="element1">
+                        <div class="ui medium image">
+                            <img src="assets/img/1.svg" alt="sp2y_headphone" id="headphone">
+                        </div>
+                        <div class="sm2-inline-list" id="circle-player">
+                            <div class="ui360 ui360-vis"><a id="circle-size" href="assets/sm/sons/1.mp3"></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header><br><br><br>
+
+    <!-- End of header and bigining of master content-->
+
+    <!--Studio services-->
+      <div class="album-single">
+          <h2 class="headline" style="font-family: Josefin Sans;">Nos<span id="span"> Services</span> </h2><br>
+      </div>
+      <p class="tagline" id="explaination">Ephésiens 5:19<br> Partager des hymnes et des cantiques spirituels, c'est partager la vie de <span class="punchline"><b>Christ.</b></span>
+      </p><br>
+      <div class="album-single">
+          <a class="item">
+              <div class="ui horizontal label" id="new-label">4 services offers gratuitement</div>
+          </a>
+      </div><br>
+      <div class="ui container">
+        <div class="ui three column doubling grid" id="services">
+        <div class="row" id = "services-row">
+          <div class="four wide column">
+            <h2 class="ui center aligned icon header"><i class="circular microphone icon"></i>Enregistrement</h2>
+            <p><Lorem> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+
+          </Lorem></p>
+          </div>
+          <div class="four wide column">
+            <h2 class="ui center aligned icon header"><i class="circular sliders vertical icon"></i>Mixage</h2>
+            <p><Lorem> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          </div>
+
+          <div class="four wide column">
+                <h2 class="ui center aligned icon header"><i class="circular sync icon"></i>Mastering</h2>
+                <p><Lorem> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+
+              </Lorem></p>
+              </div>
+        </div>
+
+          <div class="row" id = "services-row">
+              <div class="four wide column">
+                <h2 class="ui center aligned icon header"><i class="circular save icon"></i>Sauvegarde</h2>
+                <p><Lorem> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+
+              </div>
+          </div>
+
+      </div>
+      </div>
+      <br><br><br><br><br><br>
+
+
+
+
+    <!--Begining of Albums-->
+
+      <div class="album-single">
+          <h2 class="headline" style="font-family: Josefin Sans;">Albums & <span id="span">Singles</span> </h2><br>
+      </div>
+      <p class="tagline" id="explaination">Ephésiens 5:19<br> Partager des hymnes et des cantiques spirituels, c'est partager la vie de <span class="punchline"><b>Christ.</b></span>
+      </p><br>
+
+      <div class="album-single">
+          <a class="item">
+              <div class="ui horizontal label" id="new-label">4 Albums & 2 Singles</div>
+          </a>
+      </div><br>
+      <div class="ui container">
+          <div class="card-carousel">
+              <div class="my-card">
+                  <div class="ui card">
+                      <div class="image">
+                          <img src="assets/img/1.jpg">
+                      </div>
+                      <div class="content">
+                          <a class="header">Un vase d'honneur - GCR</a>
+                          <div class="meta">
+                              <span class="date">Publié le 10/12/18</span>
+                          </div>
+                          <div class="description">
+                              Album de x titres sortie en 20XX.
+                          </div>
+                      </div>
+                      <div class="extra content">
+                          <a>
+                              <i class="headphones icon"></i>
+                              Ecouter l'album
+                          </a>
+                      </div>
+                  </div>
+              </div>
+              <div class="my-card">
+                  <div class="ui card">
+                      <div class="image">
+                          <img src="assets/img/2.jpg">
+                      </div>
+                      <div class="content">
+                          <a class="header">Agneau de Dieu - Prisca O.</a>
+                          <div class="meta">
+                              <span class="date">Publié le 10/12/18</span>
+                          </div>
+                          <div class="description">
+                              Album de x titres sortie en 20XX.
+                          </div>
+                      </div>
+                      <div class="extra content">
+                          <a>
+                              <i class="headphones icon"></i>
+                              Ecouter l'album
+                          </a>
+                      </div>
+                  </div>
+              </div>
+              <div class="my-card">
+                  <div class="ui card">
+                      <div class="image">
+                          <img src="assets/img/3.jpg">
+                      </div>
+                      <div class="content">
+                          <a class="header">Ta volonté - Aimé Santini</a>
+                          <div class="meta">
+                              <span class="date">Publié le 10/12/18</span>
+                          </div>
+                          <div class="description">
+                              Album de x titres sortie en 20XX.
+                          </div>
+                      </div>
+                      <div class="extra content">
+                          <a>
+                              <i class="headphones icon"></i>
+                              Ecouter l'album
+                          </a>
+                      </div>
+                  </div>
+              </div>
+              <div class="my-card">
+                  <div class="ui card">
+                      <div class="image">
+                          <img src="assets/img/4.jpg">
+                      </div>
+                      <div class="content">
+                          <a class="header">Je veux exprimer - JPC</a>
+                          <div class="meta">
+                              <span class="date">Publié le 10/12/18</span>
+                          </div>
+                          <div class="description">
+                              Album de x titres sortie en 20XX.
+                          </div>
+                      </div>
+                      <div class="extra content">
+                          <a>
+                              <i class="headphones icon"></i>
+                              Ecouter l'album
+                          </a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            </div><br><br><br>
+                <div class="ui grid" id="Enregistrement-testimonials2">
+                    <h2 class="headline" style="font-family: Josefin Sans;"><span id="span">Témoignages</span> </h2>
+                </div><br>
+
+        <p id="explaination2" class="tagline">Afin de continuellement rendre gloire à Notre Seigneur <b class="punchline">Jésus-Christ</b>, <br> Nous voulons téémoigner de la véracité de sa parole dans nos vies.</p>
+        <div class="album-single">
+        <a class="item">
+            <div class="ui horizontal label" id="new-label2">4 témoignages édifiants</div>
+        </a>
+
+        </div><br><br><br><br><br><br><br><br><br>
+                <div class="ui container">
+
+                <div class="ui stackable items" id="testi">
+                    <div class="item">
+                        <div class="ui tiny image">
+                            <img src="assets/img/molly.png">
+                        </div>
+                        <div class="content" id = "content-left">
+                            <a class="header">Stéphana ENGONGA</a>
+                            <div class="meta">
+                                <span>Affranchie des dogmes du catholicisme</span>
+                            </div>
+                            <div class="description">
+                                <p>Je suis née dans une famille modeste dont les valeurs religieuses et modeste d'un point de vue...</p>
+                            </div>
+                            <div class="extra">
+                                <a href="">Lire le témoignage</a><i class="ui Medium file pdf outline icon" style="color:rgb(178, 59, 49); font-size:20px"></i><i
+                                    class="ui Medium square share icon" style="color:green"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="ui tiny image">
+                            <img src="assets/img/matthew.png">
+                        </div>
+                        <div class="content">
+                            <a class="header">Prisca Ouambeti</a>
+                            <div class="meta">
+                                <span>Nos grâces et nos dons appartiennent à Jésus</span>
+                            </div>
+                            <div class="description">
+                                <p>Au travers de cet album, le Seigneur m’a fait passer par des déserts, par...</p>
+                            </div>
+                            <div class="extra">
+                                <a href="">Lire le témoignage</a><i class="ui Medium file pdf outline icon" style="color:rgb(178, 59, 49); font-size:20px"></i><i
+                                    class="ui Medium square share icon" style="color:green"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="ui container">
+                    <div class="ui stackable items" id="testi">
+                        <div class="item">
+                            <div class="ui tiny image">
+                                <img src="assets/img/matthew.png">
+                            </div>
+                            <div class="content">
+                                <a class="header">Aimée Santini</a>
+                                <div class="meta">
+                                    <span>L'obéissance au Seigneur vaut mieux que les sacrifices</span>
+                                </div>
+                                <div class="description">
+                                    <p>Je suis issue d’une famille nombreuse, d’une famille polygame donc dans un environnement...</p>
+                                </div>
+                                <div class="extra">
+                                    <a href="">Lire le témoignage</a><i class="ui Medium file pdf outline icon" style="color:rgb(178, 59, 49); font-size:20px"></i><i
+                                        class="ui Medium square share icon" style="color:green"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="ui tiny image">
+                                <img src="assets/img/elyse.png">
+                            </div>
+                            <div class="content">
+                                <a class="header">Anthony Lilomba</a>
+                                <div class="meta">
+                                    <span>Les ordonances de YHWH sont droites, elle réjouissent le coeur</span>
+                                </div>
+                                <div class="description">
+                                    <p>Il est important d’obéir au Seigneur, car lorsqu’il nous parle, il ne nous dit pas....</p>
+                                </div>
+                                <div class="extra">
+                                    <a href="">Lire le témoignage</a><i class="ui Medium file pdf outline icon" style="color:rgb(178, 59, 49); font-size:20px"></i><i class="ui Medium square share icon" style="color:green"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+      <br><br><br><br>
+
+      <div class="ui grid" id="Enregistrement-testimonials2">
+          <h2 class="headline" style="font-family: Josefin Sans;">Info Lettre & <span id="span">Contacts</span> </h2>
+      </div><br>
+      <p id="explaination2" class="tagline">Nous envoyons fréquemment par le canal des email, les notifications relatives à la publication des cantiques nouvellement postés sur le site.<br> Pour les recevoir, il suffit de renseignez votre adresse mail ci-dessous <b class="punchline">Jésus-Christ</b></p>
+      <div class="album-single">
+          <a class="item">
+              <div class="ui horizontal label" id="new-label2">Jésus-Christ est Dieu</div>
+          </a>
+      </div>
+   <!--Debut Newsletter et Contact-->
+      <div class="ui stackable two column grid container">
+          <div class="row">
+              <div class="column">
+                  <div class="ui raised segment" id="a1">
+                      <span id="text-span">
+                                    <i class="envelope open outline icon"></i> Souscrire à la News Letter <br><br>
+                                  </span>
+                      <p>
+                          Recevez par e-mail les notifications de publications de nouveaux cantique sur le site :
+                      </p>
+                      <div class="column">
+                          <div class="row">
+                              <div class="ui left corner labeled action input" id="input-nl">
+                                  <input id="input-nl" type="text" placeholder="ex.: adresse@mail.com" value="">
+                                  <div class="ui left corner label">
+                                      <i class="at icon"></i>
+                                  </div>
+                                  <button class="ui button" id="buton-nl"> Envoyer </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="column">
+                  <div class="ui raised segment" id="a2">
+
+                      <span id="text-span">
+                                    <i class="address card outline icon"></i> Nous contacter
+                                </span><br><br>
+                      <div class="row">
+                             <p>Pour tout besoin d'informations supplémentaire, merci de nous contacter suivant les coordonnées ci-dessous :</p>
+                              <div class="ui list">
+                                  <div class="item">
+                                      <i class="mail icon"></i>
+                                      <div class="content">
+                                          <a href="mailto:sp2y_contact@studiopsaumes2yhwh.com">sp2y_contact@studiopsaumes2yhwh.com</a>
+                                      </div>
+                                  </div>
+                                  <div class="item">
+                                      <i class="linkify icon"></i>
+                                      <div class="content">
+                                          <a href="https://www.studiopsaumes2yhwh.com">www.studiopsaumes2yhwh.com</a>
+                                      </div>
+                                  </div>
+                                  <div class="item">
+                                      <i class="phone icon"></i>
+                                      <div class="content">
+                                          <a href="#">+241 07 472 736</a>
+                                      </div>
+                                  </div>
+                              </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+<!--SVG spark-->
+
+
+<!--Footer content-->
+  <footer class="" id="footer">
+        <div class="ui container" id="headline">
+            <div class="ui grid">
+                <div class="doubling three column row" id="content-footer">
+                    <div class="column">
+
+                        <h1><i class="headphones icon"></i><span id="span-inverted">SP2Y</span></h1>
+                        <p id="block-bottom-footer">Nous ne faisons pas la promotion d'artiste gospel, encore moins celle des albums chrétiens, mais nous promouvons le nom de Jésus. Notre grâce ne se vend pas, mais se donne gratuitement.
+                        </p><br><br>
+
+                    </div>
+
+                    <div class="row" id="list-li">
+                        <div class="column" id="">
+                            <ul>
+                                <li id="li-list">
+                                    <h3>Studio</h3>
+                                </li><br>
+                                <li id="li-list"><a id="link-footer" href="#">Enregistrement</a></li>
+                                <li id="li-list"><a id="link-footer" href="#">Mixage</a></li>
+                                <li id="li-list"><a id="link-footer" href="#">Mastering</a></li>
+                                <li id="li-list"><a id="link-footer" href="#">Sauvegarde</a></li>
+                            </ul>
+                        </div>
+                        <div class="column" id="">
+                            <ul>
+                                <li id="li-list">
+                                    <h3>Vision</h3>
+                                </li><br>
+                                <li id="li-list"><a id="link-footer" href="#">Origine</a></li>
+                                <li id="li-list"><a id="link-footer" href="#">Mission</a></li>
+                                <li id="li-list"><a id="link-footer" href="#">Objectif</a></li>
+                            </ul>
+                        </div>
+                        <div class="column" id="">
+                            <ul>
+                                <li id="li-list">
+                                    <h3>Racourci</h3>
+                                </li><br>
+                                <li id="li-list"><a id="link-footer" href="#">Acceuil</a></li>
+                                <li id="li-list"><a id="link-footer" href="#">Albums</a></li>
+                                <li id="li-list"><a id="link-footer" href="#">Témoignages</a></li>
+                                <li id="li-list"><a id="link-footer" href="#">Sourd-Muet</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="" id="last-line-footer">
+                    <div class="column">
+                        <b>© 2019 <span id="">Studio Psaumes De YHWH</span>. All rights reserved.</b>
+                    </div>
+                    <div class="column" id="">
+                        <a href="#" id="soundcloud"><i class="soundcloud outline icon"></i></a>
+                        <a href="#" id="facebook"><i class="envelope outline icon"></i></a>
+                        <a href="#" id="youtube"><i class="youtube outline icon"></i></a>
+                        <a href="#" id="git"><i class="github outline icon"></i></a>
+                        <a href="#" id="aws"><i class="aws outline icon"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+    <!--Footer ends-->
+
+    <!--Script for Dimmer function -->
+    <script type="text/javascript">
+        $('.ui.dropdown')
+            .dropdown();
+
+    </script>
+
+    <script>
+        //Headings scroll effect
+        ScrollReveal().reveal('.headline', {
+            origin: 'bottom'
+        })
+        ScrollReveal().reveal('.tagline', {
+            delay: 500
+        })
+        ScrollReveal().reveal('.punchline', {
+            delay: 500
+        })
+        ScrollReveal().reveal('#headline', {
+            origin: 'bottom'
+        })
+
+        // Menu link scroll
+        function myCallback(el) {
+            el.classList.add('is-animating');
+        }
+
+        ScrollReveal().reveal('#top-menu', {
+            beforeReveal: myCallback
+        });
+
+    </script>
+
+    <!--Script fade Text description-->
+
+    <script>
+        $num = $('.my-card').length;
+        $even = $num / 2;
+        $odd = ($num + 1) / 2;
+
+        if ($num % 2 == 0) {
+            $('.my-card:nth-child(' + $even + ')').addClass('active');
+            $('.my-card:nth-child(' + $even + ')').prev().addClass('prev');
+            $('.my-card:nth-child(' + $even + ')').next().addClass('next');
+        } else {
+            $('.my-card:nth-child(' + $odd + ')').addClass('active');
+            $('.my-card:nth-child(' + $odd + ')').prev().addClass('prev');
+            $('.my-card:nth-child(' + $odd + ')').next().addClass('next');
+        }
+
+        $('.my-card').click(function () {
+            $slide = $('.active').width();
+            console.log($('.active').position().left);
+
+            if ($(this).hasClass('next')) {
+                $('.card-carousel').stop(false, true).animate({ left: '-=' + $slide });
+            } else if ($(this).hasClass('prev')) {
+                $('.card-carousel').stop(false, true).animate({ left: '+=' + $slide });
+            }
+
+            $(this).removeClass('prev next');
+            $(this).siblings().removeClass('prev active next');
+
+            $(this).addClass('active');
+            $(this).prev().addClass('prev');
+            $(this).next().addClass('next');
+        });
+
+
+        // Keyboard nav
+        $('html body').keydown(function (e) {
+            if (e.keyCode == 37) { // left
+                $('.active').prev().trigger('click');
+            }
+            else if (e.keyCode == 39) { // right
+                $('.active').next().trigger('click');
+            }
+        });
+    </script>
+</body>
+</html>
